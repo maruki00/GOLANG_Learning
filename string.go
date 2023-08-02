@@ -22,4 +22,8 @@ func main() {
 	var str1 string = "str1 "
 	var str2 string = "str2 "
 	fmt.Println("\n", strings.Join([]string{str1, str2}, ""))
+
+	name1 := `abdullah oulahyane \n`
+	fmt.Print(name1)
+
 }
