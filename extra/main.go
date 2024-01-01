@@ -44,14 +44,12 @@ func contriolFlow() {
 	}
 	println()
 }
-
 func goFunc(var1 *int, var2 int) (int, int) {
 	println("Go Func ")
 	result := *var1 + var2
 	var1 = &var2
 	return *var1, result
 }
-
 func goArray() []int {
 	println("Single D array:")
 	array := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
@@ -74,7 +72,6 @@ func goSlices() []int {
 	fmt.Println("Slices: ", slice)
 	return slice
 }
-
 func goString() string {
 	var myName string
 	myName = "abdullah"
@@ -88,7 +85,6 @@ func goMap() map[string]any {
 	fmt.Println("Map:", data)
 	return data
 }
-
 func goStruct() {
 	type Address struct {
 		street int
@@ -102,10 +98,20 @@ func goStruct() {
 	p1 := Person{name: "nbababa", age: 1245, address: Address{street: 10}}
 	fmt.Println("Struct: ", p1, p1.name)
 }
-
 func goInterfaces() {
 	println("Interfaces: Done")
 }
+func goErrors(x int, y int) (int, error) {
+	fmt.Println("Errors: ")
+	panic("Error .....")
+	// defer func() {
+	// 	recover()
+	// }()
+	fmt.Println(x / y)
+	return x / y, nil
+}
+
+// Main
 func main() {
 	fmt.Println("----------[Started]------------")
 	dataTypes()
@@ -119,4 +125,6 @@ func main() {
 	goMap()
 	goStruct()
 	goInterfaces()
+	defer goErrors(1.0, 0.0)
+	fmt.Println(goErrors(10.0, 10.0))
 }
