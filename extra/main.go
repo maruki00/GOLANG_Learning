@@ -1,10 +1,16 @@
 package main
 
 import (
+	"extra/interfaces"
 	"fmt"
+	"mainPackage"
 	"strings"
 )
 
+func goPackage() {
+	fmt.Println("Go Package: ", mainPackage.SayHello())
+	mainPackage.ToArray()
+}
 func dataTypes() {
 	var age int
 	var name string
@@ -103,17 +109,17 @@ func goInterfaces() {
 }
 func goErrors(x int, y int) (int, error) {
 	fmt.Println("Errors: ")
-	panic("Error .....")
-	// defer func() {
-	// 	recover()
-	// }()
-	fmt.Println(x / y)
+	// panic("Error .....")
+	defer func() {
+		recover()
+	}()
 	return x / y, nil
 }
 
 // Main
 func main() {
 	fmt.Println("----------[Started]------------")
+	goPackage()
 	dataTypes()
 	arithmics()
 	contriolFlow()
@@ -125,6 +131,8 @@ func main() {
 	goMap()
 	goStruct()
 	goInterfaces()
-	defer goErrors(1.0, 0.0)
+	defer goErrors(1.0, 1)
 	fmt.Println(goErrors(10.0, 10.0))
+	dog := interfaces.Dog{Name: "dog1"}
+	interfaces.PrintInfo(&dog)
 }

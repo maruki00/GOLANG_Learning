@@ -1,21 +1,34 @@
 package main
 
+import "fmt"
 
-
-
-type IAnimal iunterface {
-	sleep()
-}
-
-
-type Animal struct{
+type Dog struct {
 	name string
 }
 
-func (dog Animal) sleep (IAnimal){
-
+type Cat struct {
+	name string
 }
 
-func main(){
+type Animal interface {
+	sleep()
+}
 
+func (dog Dog) sleep() {
+	fmt.Println("Dog slepping")
+}
+
+func (cat Cat) sleep() {
+	fmt.Println("Cat slepping")
+}
+
+func printInfo(animal Animal) {
+	animal.sleep()
+}
+
+func main() {
+	dog := Dog{name: "dog1"}
+	cat := Cat{name: "Cat1"}
+	printInfo(dog)
+	printInfo(cat)
 }

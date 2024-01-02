@@ -2,10 +2,10 @@ package mainPackage
 
 import "fmt"
 
-func sayHello() string {
-	return "hello world"
+func SayHello() string {
+	return "hello world Packages...."
 }
 
-func toArray() {
-	fmt.Println("Hello world")
+func ToArray() {
+	fmt.Println("Hello world from ToArray")
 }
