@@ -9,7 +9,11 @@ import (
 
 var db *gorm.DB
 
-func GetCnx() *gorm.DB { return db }
+func GetCnx() *gorm.DB {
+	Connect()
+	return db
+}
+
 func Connect() {
 	d, err := gorm.Open(mysql.Open("gorm_test:user@tcp(127.0.0.1:3306)/gorm_test"))
 	if err != nil {
