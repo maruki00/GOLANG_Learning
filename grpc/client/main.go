@@ -23,6 +23,6 @@ func main() {
 	}
 	defer con.Close()
 
-	client := pb.NewGreetServiceClient(con)
-	CallSayHello(client)
+	// client := pb.NewGreetServiceClient(con)
+	// CallSayHello(client)
 }
