@@ -29,11 +29,22 @@ func main() {
 }
 
 func handelClient(conn net.Conn) {
+	var message string
 	buff := make([]byte, 1024)
-	msgLen, err := conn.Read(buff)
-	if err != nil {
-		log.Fatal("Error read buffer from client!")
+	for {
+		msgLen, err := conn.Read(buff)
+		if err != nil {
+			log.Fatal("Error read buffer from client!")
+		}
+
+		fmt.Println("Recieved from client: ", string(buff[:msgLen]))
+		fmt.Print("Enter message: ")
+		fmt.Scan(&message)
+		if message == "exit" || message == "quit" {
+			break
+		}
+		conn.Write([]byte(message))
 	}
-	fmt.Println("Recieved from client: ", string(buff[:msgLen]))
+
 	conn.Close()
 }
