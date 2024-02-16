@@ -32,6 +32,7 @@ func multiArgs(items ...int) {
 		fmt.Println("result: ", i, v)
 	}
 }
+
 func main() {
 	fmt.Println("a+b = ", add(1, 5))
 	var result int
