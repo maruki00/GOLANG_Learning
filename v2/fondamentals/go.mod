@@ -1,3 +1,3 @@
-module v2
+module fondamentals
 
 go 1.19

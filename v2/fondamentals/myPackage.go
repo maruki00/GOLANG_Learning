@@ -1,5 +1,9 @@
-package myPkg
+package myPackage
 
+/*
+var/func Start with lowercase thats mean that is a local variable like private
+other wise they are a global you can access them outside the package
+*/
 var GlobalVar = "Hello You still can get me outside the package..."
 
 func GlobalFunc() string {

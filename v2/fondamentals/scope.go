@@ -1,13 +1,11 @@
 package main
 
-import (
-	myPkg "delivery/golang_learning/v2/fondamentals"
-)
+import myPackage "fondamentals"
 
 func main() {
 	//Accessible
-	println(myPkg.GlobalVar)
-	println(myPkg.GlobalFunc())
+	println(myPackage.GlobalVar)
+	println(myPackage.GlobalFunc())
 
 	//Not Accessible
 	// println(myPkg.localVar)
